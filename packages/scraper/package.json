@@ -1,0 +1,19 @@
+{
+  "name": "@npi/scraper",
+  "version": "0.1.0",
+  "scripts": {
+    "start": "ts-node src/index.ts"
+  },
+  "dependencies": {
+    "pg": "^8.11.5",
+    "dotenv": "^16.4.5",
+    "axios": "^1.7.2",
+    "cheerio": "^1.0.0"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.0",
+    "@types/pg": "^8.11.6",
+    "@types/node": "^20.14.0"
+  }
+}

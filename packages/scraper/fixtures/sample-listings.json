@@ -1,0 +1,61 @@
+{
+  "kilimani": [
+    {
+      "sourceListingId": "brk-1001",
+      "neighborhood": "kilimani",
+      "locationTextRaw": "Kilimani, off Argwings Kodhek Rd",
+      "bedrooms": 2,
+      "sizeSqm": 95,
+      "price": 85000,
+      "buildingNameRaw": "Argwings Apartments",
+      "phone": "254712345001",
+      "url": "https://example.com/listing/brk-1001"
+    },
+    {
+      "sourceListingId": "p24-2001",
+      "neighborhood": "kilimani",
+      "locationTextRaw": "Kilimani",
+      "bedrooms": 2,
+      "sizeSqm": 92,
+      "price": 87000,
+      "buildingNameRaw": "Argwings Apartment",
+      "phone": "254712345001",
+      "url": "https://example.com/listing/p24-2001"
+    },
+    {
+      "sourceListingId": "brk-1002",
+      "neighborhood": "kilimani",
+      "locationTextRaw": "Kilimani, Wood Avenue",
+      "bedrooms": 1,
+      "sizeSqm": 55,
+      "price": 55000,
+      "buildingNameRaw": "Wood Avenue Suites",
+      "phone": "254712345002",
+      "url": "https://example.com/listing/brk-1002"
+    },
+    {
+      "sourceListingId": "p24-2002",
+      "neighborhood": "kilimani",
+      "locationTextRaw": "Kilimani",
+      "bedrooms": 1,
+      "sizeSqm": 54,
+      "price": 57000,
+      "buildingNameRaw": "Wood Avenue Suites",
+      "phone": null,
+      "url": "https://example.com/listing/p24-2002"
+    }
+  ],
+  "kileleshwa": [
+    {
+      "sourceListingId": "brk-3001",
+      "neighborhood": "kileleshwa",
+      "locationTextRaw": "Kileleshwa, near Yaya Centre",
+      "bedrooms": 3,
+      "sizeSqm": 140,
+      "price": 140000,
+      "buildingNameRaw": "Yaya Heights",
+      "phone": "254712345003",
+      "url": "https://example.com/listing/brk-3001"
+    }
+  ]
+}

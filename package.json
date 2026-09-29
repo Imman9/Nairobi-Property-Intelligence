@@ -1,0 +1,14 @@
+{
+  "name": "nairobi-property-intel",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "db:migrate": "npm run migrate -w packages/db",
+    "scraper:run": "npm run start -w packages/scraper",
+    "matcher:run": "npm run start -w packages/matcher",
+    "api:dev": "npm run dev -w packages/api"
+  }
+}
