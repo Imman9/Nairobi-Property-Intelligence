@@ -5,15 +5,18 @@
     "start": "ts-node src/index.ts"
   },
   "dependencies": {
-    "pg": "^8.11.5",
-    "dotenv": "^16.4.5",
     "axios": "^1.7.2",
-    "cheerio": "^1.0.0"
+    "cheerio": "^1.0.0",
+    "cross-env": "^10.1.0",
+    "dotenv": "^16.4.5",
+    "node-cron": "^4.6.0",
+    "pg": "^8.11.5"
   },
   "devDependencies": {
-    "ts-node": "^10.9.2",
-    "typescript": "^5.5.0",
+    "@types/node": "^20.14.0",
+    "@types/node-cron": "^3.0.11",
     "@types/pg": "^8.11.6",
-    "@types/node": "^20.14.0"
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.0"
   }
 }

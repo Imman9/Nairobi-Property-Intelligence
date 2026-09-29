@@ -3,12 +3,17 @@ import { pool } from "../db";
 
 export const compareRouter = Router();
 
+const MIN_SAMPLE_SIZE = 3;
+
 /**
  * GET /compare?neighborhood=kilimani&bedrooms=2&price=90000
  *
  * Where a given asking price sits relative to current listings for the
  * same neighborhood + bedroom count. Uses the *latest* observation per
  * entity, so each real unit counts once.
+ *
+ * Returns insufficient_data=true if fewer than MIN_SAMPLE_SIZE entities
+ * are available — a misleading percentile is worse than no percentile.
  */
 compareRouter.get("/", async (req, res) => {
   const neighborhood = String(req.query.neighborhood ?? "").toLowerCase();
@@ -41,12 +46,26 @@ compareRouter.get("/", async (req, res) => {
   );
 
   const result = rows[0];
+  const sampleSize = Number(result.sample_size);
+
+  if (sampleSize < MIN_SAMPLE_SIZE) {
+    return res.json({
+      neighborhood,
+      bedrooms,
+      queried_price: price,
+      insufficient_data: true,
+      sample_size: sampleSize,
+      min_required: MIN_SAMPLE_SIZE,
+      note: `Only ${sampleSize} data point(s) available — need at least ${MIN_SAMPLE_SIZE} to produce a meaningful comparison. Run more scrapes to build up history.`,
+    });
+  }
 
   res.json({
     neighborhood,
     bedrooms,
     queried_price: price,
-    sample_size: Number(result.sample_size),
+    insufficient_data: false,
+    sample_size: sampleSize,
     avg_price: result.avg_price ? Number(result.avg_price) : null,
     median_price: result.median_price ? Number(result.median_price) : null,
     percentile: result.percentile ? Math.round(Number(result.percentile) * 100) : null,

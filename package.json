@@ -8,7 +8,12 @@
   "scripts": {
     "db:migrate": "npm run migrate -w packages/db",
     "scraper:run": "npm run start -w packages/scraper",
+    "scraper:real": "cross-env SCRAPER_SOURCE=all npm run start -w packages/scraper",
     "matcher:run": "npm run start -w packages/matcher",
-    "api:dev": "npm run dev -w packages/api"
+    "api:dev": "npm run dev -w packages/api",
+    "queue:export": "ts-node packages/scraper/src/export-review-queue.ts",
+    "scheduler:start": "ts-node packages/scraper/src/scheduler.ts",
+    "scheduler:now": "ts-node packages/scraper/src/scheduler.ts --now",
+    "dashboard:dev": "npm run dev -w packages/dashboard"
   }
 }
