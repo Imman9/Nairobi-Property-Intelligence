@@ -85,7 +85,7 @@ async function fetchPage(
 
       // Headings: [0]=title, [1]=type, [2]=price, [3]=beds/baths
       const headings: string[] = [];
-      card.find("h3, h6").each((_, h) => headings.push($(h).text().trim()));
+      card.find("h3, h6").each((_, h) => { headings.push($(h).text().trim()); });
 
       const title = headings[0] ?? "";
       const priceRaw = headings[2] ?? "";
